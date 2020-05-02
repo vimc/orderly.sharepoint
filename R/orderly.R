@@ -1,7 +1,7 @@
 ##' Implements an orderly "remote" using Sharepoint as a backend.  Use
 ##' this within an \code{orderly_config.yml} configuration.
 ##'
-##' A configutation might look like
+##' A configuration might look like:
 ##'
 ##' \preformatted{
 ##' remote:
@@ -14,19 +14,19 @@
 ##' }
 ##'
 ##' which would create a remote called \code{real}, using your group's
-##' sharepoint hosted at \code{https://example.sharepoint.com}, on
+##' Sharepoint hosted at \code{https://example.sharepoint.com}, on
 ##' site \code{mysite} and within that site using path \code{Shared
 ##' Documents/orderly/real}.
 ##'
-##' This function is not indended to be used interactively
+##' This function is not intended to be used interactively
 ##'
-##' @title Create an orderly remote based on sharepoint
+##' @title Create an orderly remote based on Sharepoint
 ##'
 ##' @param url Sharepoint URL
 ##'
 ##' @param site Sharepoint "site"
 ##'
-##' @param path Path within the sharepoint site. In our experience
+##' @param path Path within the Sharepoint site. In our experience
 ##'   these often start with \code{Shared Documents} but your setup
 ##'   may vary.
 ##'

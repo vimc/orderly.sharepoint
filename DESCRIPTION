@@ -5,8 +5,10 @@ Authors@R: c(person("Rich", "FitzJohn", role = c("aut", "cre"),
                     email = "rich.fitzjohn@gmail.com"),
              person("Imperial College of Science, Technology and Medicine",
                     role = "cph"))
-Description: Store files by content, similar in spirit to the 'storr'
-    package (into which this might get folded).
+Description: Store orderly reports on Sharepoint. Provides an orderly
+    remote driver that can be used to share orderly reports using
+    Sharepoint. You can use Sharepoint's access controls and use this
+    to set up a lightweight way of using orderly within a team.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -2,7 +2,7 @@
 % Please edit documentation in R/orderly.R
 \name{orderly_remote_sharepoint}
 \alias{orderly_remote_sharepoint}
-\title{Create an orderly remote based on sharepoint}
+\title{Create an orderly remote based on Sharepoint}
 \usage{
 orderly_remote_sharepoint(url, site, path)
 }
@@ -11,7 +11,7 @@ orderly_remote_sharepoint(url, site, path)
 
 \item{site}{Sharepoint "site"}
 
-\item{path}{Path within the sharepoint site. In our experience
+\item{path}{Path within the Sharepoint site. In our experience
 these often start with \code{Shared Documents} but your setup
 may vary.}
 }
@@ -28,7 +28,7 @@ Implements an orderly "remote" using Sharepoint as a backend.  Use
 this within an \code{orderly_config.yml} configuration.
 }
 \details{
-A configutation might look like
+A configuration might look like:
 
 \preformatted{
 remote:
@@ -41,9 +41,9 @@ remote:
 }
 
 which would create a remote called \code{real}, using your group's
-sharepoint hosted at \code{https://example.sharepoint.com}, on
+Sharepoint hosted at \code{https://example.sharepoint.com}, on
 site \code{mysite} and within that site using path \code{Shared
 Documents/orderly/real}.
 
-This function is not indended to be used interactively
+This function is not intended to be used interactively
 }

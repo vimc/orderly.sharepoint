@@ -6,7 +6,7 @@
 [![codecov.io](https://codecov.io/github/vimc/orderly.sharepoint/coverage.svg?branch=master)](https://codecov.io/github/vimc/orderly.sharepoint?branch=master)
 <!-- badges: end -->
 
-An [`orderly`](https://github.com/vimc/orderly) remote hosted on sharepoint, using [`pointr`](https://github.com/reside-ic/pointr).  This is experimental!
+An [`orderly`](https://github.com/vimc/orderly) remote hosted on Sharepoint, using [`pointr`](https://github.com/reside-ic/pointr).  This is experimental!
 
 ### Usage
 
@@ -30,15 +30,15 @@ remote:
 
 Where
 
-* `url` is the base url of your Office365/sharepoint site, such as `myorg.sharepoint.com`
-* `site` is your sitename on sharepoint
+* `url` is the base url of your Office365/Sharepoint site, such as `myorg.sharepoint.com`
+* `site` is your site name on Sharepoint
 * `path` is the path within your site name where documents will be stored
 
-The configuration above lists two remotes, one "real" and one "testing", which we have found a useful pairing.  You might configure sharepoint to allow anyone in your group to read from both, but only certain people to push to `real`.
+The configuration above lists two remotes, one "real" and one "testing", which we have found a useful pairing.  You might configure Sharepoint to allow anyone in your group to read from both, but only certain people to push to `real`.
 
 `orderly.sharepoint` will store files as `archive/<name>/<id>` where `<name>` is the report name and `<id>` is a zip archive of the report contents.  These must be treated as read-only and must not be modified (they do not have a file extension to help this).
 
-With this set up, then `orderly::pull_dependencies`, `orderly::pull_archive` and `orderly::push_archive` will work, and you can use your sharepoint site to distribute orderly results within your group.
+With this set up, then `orderly::pull_dependencies`, `orderly::pull_archive` and `orderly::push_archive` will work, and you can use your Sharepoint site to distribute orderly results within your group.
 
 ## License
 
