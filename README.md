@@ -10,16 +10,22 @@ An [`orderly`](https://github.com/vimc/orderly) remote hosted on sharepoint, usi
 
 ### Usage
 
-Configure your `orderly_config.yml` as
+Configure your `orderly_config.yml` as, for example:
 
 ```
 remote:
-  production:
+  real:
     driver: orderly.sharepoint::orderly_remote_sharepoint
     args:
       url: https://example.com
       site: mysite
       path: Shared Documents/orderly/real
+  testing:
+    driver: orderly.sharepoint::orderly_remote_sharepoint
+    args:
+      url: https://example.com
+      site: mysite
+      path: Shared Documents/orderly/testing
 ```
 
 Where
@@ -27,6 +33,8 @@ Where
 * `url` is the base url of your Office365/sharepoint site, such as `myorg.sharepoint.com`
 * `site` is your sitename on sharepoint
 * `path` is the path within your site name where documents will be stored
+
+The configuration above lists two remotes, one "real" and one "testing", which we have found a useful pairing.  You might configure sharepoint to allow anyone in your group to read from both, but only certain people to push to `real`.
 
 `orderly.sharepoint` will store files as `archive/<name>/<id>` where `<name>` is the report name and `<id>` is a zip archive of the report contents.  These must be treated as read-only and must not be modified (they do not have a file extension to help this).
 
