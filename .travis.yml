@@ -2,8 +2,7 @@ language: r
 cache: packages
 r_github_packages:
   - reside-ic/pointr@reside-161
-  - vimc/orderly
-  - vimc/orderlyweb
+  - vimc/orderly@vimc-3784
 r_packages:
   - covr
 after_success:

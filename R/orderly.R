@@ -87,8 +87,7 @@ orderly_remote_sharepoint_ <- R6::R6Class(
       zip <- tempfile(fileext = ".zip")
       on.exit(unlink(zip))
       zip <- self$folder$download(file.path("archive", name, id), zip)
-      ## VIMC-3771
-      orderlyweb:::unzip_archive(zip, name, id)
+      unzip_archive(zip, name, id)
     },
 
     run = function(...) {

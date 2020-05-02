@@ -12,8 +12,7 @@ Encoding: UTF-8
 LazyData: true
 Language: en-GB
 Imports:
-    orderly,
-    orderlyweb,
+    orderly (>= 1.1.32),
     pointr (>= 0.1.4),
     withr,
     zip
