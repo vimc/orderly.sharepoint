@@ -11,11 +11,39 @@ orderly_remote_sharepoint(url, site, path)
 
 \item{site}{Sharepoint "site"}
 
-\item{path}{Path within the sharepoint site}
+\item{path}{Path within the sharepoint site. In our experience
+these often start with \code{Shared Documents} but your setup
+may vary.}
 }
 \value{
 An \code{orderly_remote_sharepoint} object
+
+An \code{orderly_remote_sharepoint} object, designed to be
+  used by orderly.  This function should however not generally be
+  called by users directly, as it should be used within
+  \code{orderly_config.yml}
 }
 \description{
-Create an orderly remote based on sharepoint
+Implements an orderly "remote" using Sharepoint as a backend.  Use
+this within an \code{orderly_config.yml} configuration.
+}
+\details{
+A configutation might look like
+
+\preformatted{
+remote:
+  real:
+    driver: orderly.sharepoint::orderly_remote_sharepoint
+    args:
+      url: https://example.sharepoint.com
+      site: mysite
+      path: Shared Documents/orderly/real
+}
+
+which would create a remote called \code{real}, using your group's
+sharepoint hosted at \code{https://example.sharepoint.com}, on
+site \code{mysite} and within that site using path \code{Shared
+Documents/orderly/real}.
+
+This function is not indended to be used interactively
 }

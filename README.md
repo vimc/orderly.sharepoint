@@ -17,13 +17,13 @@ remote:
   real:
     driver: orderly.sharepoint::orderly_remote_sharepoint
     args:
-      url: https://example.com
+      url: https://example.sharepoint.com
       site: mysite
       path: Shared Documents/orderly/real
   testing:
     driver: orderly.sharepoint::orderly_remote_sharepoint
     args:
-      url: https://example.com
+      url: https://example.sharepoint.com
       site: mysite
       path: Shared Documents/orderly/testing
 ```
