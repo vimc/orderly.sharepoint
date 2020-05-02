@@ -10,4 +10,4 @@ An [`orderly`](https://github.com/vimc/orderly) remote hosted on sharepoint, usi
 
 ## License
 
-MIT © Rich FitzJohn
+MIT © Imperial College of Science, Technology and Medicine
