@@ -6,6 +6,8 @@
 [![codecov.io](https://codecov.io/github/vimc/orderly.sharepoint/coverage.svg?branch=master)](https://codecov.io/github/vimc/orderly.sharepoint?branch=master)
 <!-- badges: end -->
 
+An [`orderly`](https://github.com/vimc/orderly) remote hosted on sharepoint, using [`pointr`](https://github.com/reside-ic/pointr).  This is experimental!
+
 ## License
 
 MIT © Rich FitzJohn

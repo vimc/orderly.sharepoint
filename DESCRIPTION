@@ -13,6 +13,11 @@ LazyData: true
 Language: en-GB
 Imports:
     orderly,
-    pointr
+    orderlyweb,
+    pointr (>= 0.1.4),
+    withr,
+    zip
 Suggests:
+    mockery,
     testthat
+RoxygenNote: 7.0.2
