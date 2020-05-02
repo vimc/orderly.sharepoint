@@ -14,7 +14,6 @@ Language: en-GB
 Imports:
     orderly (>= 1.1.32),
     pointr (>= 0.1.4),
-    withr,
     zip
 Suggests:
     mockery,
