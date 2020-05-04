@@ -2,6 +2,7 @@ language: r
 cache: packages
 r_github_packages:
   - reside-ic/pointr
+  - vimc/orderly
 r_packages:
   - covr
 after_success:
