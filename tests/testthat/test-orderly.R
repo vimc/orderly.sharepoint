@@ -9,7 +9,7 @@ test_that("list_reports calls folder$folders('archive')", {
 })
 
 
-test_that("list_versions calls folder$files('archive/:name')", {
+test_that("list_versions calls folder$files('archive/<name>')", {
   folder <- list(files = mockery::mock(list(name = c("a", "b", "c"))))
   cl <- orderly_remote_sharepoint_$new(folder)
   expect_equal(cl$list_versions("x"), c("a", "b", "c"))

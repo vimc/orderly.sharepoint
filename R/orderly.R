@@ -18,6 +18,11 @@
 ##' site \code{mysite} and within that site using path \code{Shared
 ##' Documents/orderly/real}.
 ##'
+##' Currently authentication is interactive, or uses the values of
+##' environment variables \code{SHAREPOINT_USERNAME} and
+##' \code{SHAREPOINT_PASS}.  Once we expose richer authentication
+##' approaches in pointr that will be exposed here (RESIDE-162).
+##'
 ##' This function is not intended to be used interactively
 ##'
 ##' @title Create an orderly remote based on Sharepoint
