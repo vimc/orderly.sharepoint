@@ -93,7 +93,7 @@ orderly_remote_sharepoint_ <- R6::R6Class(
     folder = NULL,
     name = NULL,
 
-    initialize = function(folder, name) {
+    initialize = function(folder, name = NULL) {
       self$folder <- folder
       self$name <- name
     },
