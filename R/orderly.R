@@ -35,16 +35,18 @@
 ##'   these often start with \code{Shared Documents} but your setup
 ##'   may vary.
 ##'
+##' @param name Friendly name for the remote
+##'
 ##' @return An \code{orderly_remote_sharepoint} object
 ##' @return An \code{orderly_remote_sharepoint} object, designed to be
 ##'   used by orderly.  This function should however not generally be
 ##'   called by users directly, as it should be used within
 ##'   \code{orderly_config.yml}
 ##' @export
-orderly_remote_sharepoint <- function(url, site, path) {
+orderly_remote_sharepoint <- function(url, site, path, name = NULL) {
   client <- orderly_sharepoint_client(url)
   folder <- orderly_sharepoint_folder(client, site, path)
-  orderly_remote_sharepoint_$new(folder)
+  orderly_remote_sharepoint_$new(folder, name)
 }
 
 
@@ -79,6 +81,7 @@ orderly_sharepoint_folder <- function(client, site, path) {
   on.exit(unlink(tmp))
   writeLines("orderly.sharepoint", tmp)
   folder$upload(tmp, path)
+  folder$create("archive")
   folder
 }
 
@@ -89,9 +92,11 @@ orderly_remote_sharepoint_ <- R6::R6Class(
 
   public = list(
     folder = NULL,
+    name = NULL,
 
-    initialize = function(folder) {
+    initialize = function(folder, name = NULL) {
       self$folder <- folder
+      self$name <- name
     },
 
     list_reports = function() {
