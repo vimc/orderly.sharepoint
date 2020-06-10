@@ -4,7 +4,7 @@
 \alias{orderly_remote_sharepoint}
 \title{Create an orderly remote based on Sharepoint}
 \usage{
-orderly_remote_sharepoint(url, site, path)
+orderly_remote_sharepoint(url, site, path, name = NULL)
 }
 \arguments{
 \item{url}{Sharepoint URL}
@@ -14,6 +14,8 @@ orderly_remote_sharepoint(url, site, path)
 \item{path}{Path within the Sharepoint site. In our experience
 these often start with \code{Shared Documents} but your setup
 may vary.}
+
+\item{name}{Friendly name for the remote}
 }
 \value{
 An \code{orderly_remote_sharepoint} object

@@ -176,8 +176,10 @@ test_that("creation", {
                 mock_client)
   mockery::stub(orderly_remote_sharepoint, "orderly_sharepoint_folder",
                 mock_folder)
-  res <- orderly_remote_sharepoint("https://example.com", "site", "path")
+  res <- orderly_remote_sharepoint("https://example.com", "site", "path",
+                                   name = "name")
   expect_identical(res$folder, folder)
+  expect_identical(res$name, "name")
 
   mockery::expect_called(mock_client, 1)
   expect_equal(mockery::mock_args(mock_client)[[1]],
