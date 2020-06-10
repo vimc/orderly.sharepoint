@@ -81,6 +81,7 @@ orderly_sharepoint_folder <- function(client, site, path) {
   on.exit(unlink(tmp))
   writeLines("orderly.sharepoint", tmp)
   folder$upload(tmp, path)
+  folder$create("archive")
   folder
 }
 

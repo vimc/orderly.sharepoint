@@ -117,6 +117,7 @@ test_that("skip if already created", {
 test_that("continue if not created", {
   folder <- list(download = mockery::mock(stop("not found")),
                  list = mockery::mock(data.frame(name = character(0))),
+                 create = mockery::mock(NULL),
                  upload = mockery::mock(NULL))
   client <- list(folder = mockery::mock(folder))
 
@@ -137,6 +138,10 @@ test_that("continue if not created", {
   mockery::expect_called(folder$upload, 1)
   args <- mockery::mock_args(folder$upload)[[1]]
   expect_equal(args[[2]], "orderly.sharepoint")
+
+  mockery::expect_called(folder$create, 1)
+  expect_equal(mockery::mock_args(folder$create)[[1]],
+               list("archive"))
 })
 
 
