@@ -21,7 +21,7 @@
 ##' Currently authentication is interactive, or uses the values of
 ##' environment variables \code{SHAREPOINT_USERNAME} and
 ##' \code{SHAREPOINT_PASS}.  Once we expose richer authentication
-##' approaches in pointr that will be exposed here (RESIDE-162).
+##' approaches in spud that will be exposed here (RESIDE-162).
 ##'
 ##' This function is not intended to be used interactively
 ##'
@@ -54,7 +54,7 @@ orderly_remote_sharepoint <- function(url, site, path, name = NULL) {
 ## general approach of exposing free constructor!
 ## https://github.com/r-lib/mockery/issues/21
 orderly_sharepoint_client <- function(url) {
-  pointr::pointr$new(url) # nocov
+  spud::sharepoint$new(url) # nocov
 }
 
 
