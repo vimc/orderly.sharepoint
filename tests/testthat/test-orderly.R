@@ -39,6 +39,28 @@ test_that("pull", {
   expect_equal(dirname(args[[2]]), tempdir())
 })
 
+test_that("metadata", {
+  path <- orderly::orderly_example("minimal")
+  id <- orderly::orderly_run("example", root = path, echo = FALSE)
+  p <- orderly::orderly_commit(id, root = path)
+  zip <- zip_dir(p)
+
+  folder <- list(download = mockery::mock(zip))
+  cl <- orderly_remote_sharepoint_$new(folder)
+  res <- cl$metadata("example", id)
+
+  expect_true(file.exists(res))
+  ## metadata can be read
+  rds <- readRDS(res)
+  expect_true(!is.null(rds))
+
+  mockery::expect_called(folder$download, 1)
+  args <- mockery::mock_args(folder$download)[[1]]
+  expect_equal(args[[1]], file.path("archive/example", id))
+  expect_match(args[[2]], "\\.zip$")
+  expect_equal(dirname(args[[2]]), tempdir())
+})
+
 
 test_that("push", {
   path <- orderly::orderly_example("minimal")
@@ -81,6 +103,14 @@ test_that("url_report is not supported", {
   cl <- orderly_remote_sharepoint_$new(NULL)
   expect_error(cl$url_report("a", "b"),
                "'orderly_remote_sharepoint' remotes do not support urls")
+})
+
+test_that("bundles are not supported", {
+  cl <- orderly_remote_sharepoint_$new(NULL)
+  expect_error(cl$bundle_pack(),
+               "'orderly_remote_sharepoint' remotes do not support bundles")
+  expect_error(cl$bundle_import(),
+               "'orderly_remote_sharepoint' remotes do not support bundles")
 })
 
 

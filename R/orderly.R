@@ -130,11 +130,24 @@ orderly_remote_sharepoint_ <- R6::R6Class(
       unzip_archive(zip, name, id)
     },
 
+    metadata = function(name, id) {
+      archive_path <- self$pull(name, id)
+      file.path(archive_path, "orderly_run.rds")
+    },
+
     run = function(...) {
       stop("'orderly_remote_sharepoint' remotes do not run")
     },
 
     url_report = function(name, id) {
       stop("'orderly_remote_sharepoint' remotes do not support urls")
+    },
+
+    bundle_pack = function(...) {
+      stop("'orderly_remote_sharepoint' remotes do not support bundles")
+    },
+
+    bundle_import = function(...) {
+      stop("'orderly_remote_sharepoint' remotes do not support bundles")
     }
   ))
