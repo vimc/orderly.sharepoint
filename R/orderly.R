@@ -139,6 +139,10 @@ orderly_remote_sharepoint_ <- R6::R6Class(
       stop("'orderly_remote_sharepoint' remotes do not run")
     },
 
+    kill = function(...) {
+      stop("'orderly_remote_sharepoint' remotes do not support kill")
+    },
+
     url_report = function(name, id) {
       stop("'orderly_remote_sharepoint' remotes do not support urls")
     },

@@ -99,6 +99,13 @@ test_that("report_run is not supported", {
 })
 
 
+test_that("report_run is not supported", {
+  cl <- orderly_remote_sharepoint_$new(NULL)
+  expect_error(cl$kill("my_key"),
+               "'orderly_remote_sharepoint' remotes do not support kill")
+})
+
+
 test_that("url_report is not supported", {
   cl <- orderly_remote_sharepoint_$new(NULL)
   expect_error(cl$url_report("a", "b"),
