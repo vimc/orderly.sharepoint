@@ -21,6 +21,6 @@ Suggests:
     mockery,
     testthat
 Remotes:
-    reside-ic/spud
+    reside-ic/spud,
     orderly1=vimc/orderly@vimc-7135
 RoxygenNote: 7.0.2
