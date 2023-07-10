@@ -1,9 +1,0 @@
-language: r
-cache: packages
-r_github_packages:
-  - reside-ic/spud
-  - vimc/orderly
-r_packages:
-  - covr
-after_success:
-  - Rscript -e 'covr::codecov(quiet = FALSE)'

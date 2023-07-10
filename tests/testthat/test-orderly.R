@@ -36,7 +36,8 @@ test_that("pull", {
   args <- mockery::mock_args(folder$download)[[1]]
   expect_equal(args[[1]], file.path("archive/example", id))
   expect_match(args[[2]], "\\.zip$")
-  expect_equal(dirname(args[[2]]), tempdir())
+  expect_equal(normalizePath(dirname(args[[2]]), mustWork = TRUE),
+               normalizePath(tempdir(), mustWork = TRUE))
 })
 
 test_that("metadata", {
@@ -58,7 +59,8 @@ test_that("metadata", {
   args <- mockery::mock_args(folder$download)[[1]]
   expect_equal(args[[1]], file.path("archive/example", id))
   expect_match(args[[2]], "\\.zip$")
-  expect_equal(dirname(args[[2]]), tempdir())
+  expect_equal(normalizePath(dirname(args[[2]]), mustWork = TRUE),
+               normalizePath(tempdir(), mustWork = TRUE))
 })
 
 
