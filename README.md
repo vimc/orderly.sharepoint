@@ -6,7 +6,7 @@
 [![R-CMD-check](https://github.com/vimc/orderly.sharepoint/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/vimc/orderly.sharepoint/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-An [`orderly`](https://github.com/vimc/orderly) remote hosted on Sharepoint, using [`spud`](https://github.com/reside-ic/spud).  This is experimental!
+An [`orderly1`](https://github.com/vimc/orderly1) remote hosted on Sharepoint, using [`spud`](https://github.com/reside-ic/spud).  This is experimental!
 
 ### Usage
 
@@ -38,7 +38,7 @@ The configuration above lists two remotes, one "real" and one "testing", which w
 
 `orderly.sharepoint` will store files as `archive/<name>/<id>` where `<name>` is the report name and `<id>` is a zip archive of the report contents.  These must be treated as read-only and must not be modified (they do not have a file extension to help this).
 
-With this set up, then `orderly::pull_dependencies`, `orderly::pull_archive` and `orderly::push_archive` will work, and you can use your Sharepoint site to distribute orderly results within your group.
+With this set up, then `orderly1::pull_dependencies`, `orderly1::pull_archive` and `orderly1::push_archive` will work, and you can use your Sharepoint site to distribute orderly results within your group.
 
 ## License
 
