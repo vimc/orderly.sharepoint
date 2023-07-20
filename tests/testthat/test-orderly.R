@@ -19,9 +19,9 @@ test_that("list_versions calls folder$files('archive/<name>')", {
 
 
 test_that("pull", {
-  path <- orderly::orderly_example("minimal")
-  id <- orderly::orderly_run("example", root = path, echo = FALSE)
-  p <- orderly::orderly_commit(id, root = path)
+  path <- orderly1::orderly_example("minimal")
+  id <- orderly1::orderly_run("example", root = path, echo = FALSE)
+  p <- orderly1::orderly_commit(id, root = path)
   zip <- zip_dir(p)
 
   folder <- list(download = mockery::mock(zip))
@@ -41,9 +41,9 @@ test_that("pull", {
 })
 
 test_that("metadata", {
-  path <- orderly::orderly_example("minimal")
-  id <- orderly::orderly_run("example", root = path, echo = FALSE)
-  p <- orderly::orderly_commit(id, root = path)
+  path <- orderly1::orderly_example("minimal")
+  id <- orderly1::orderly_run("example", root = path, echo = FALSE)
+  p <- orderly1::orderly_commit(id, root = path)
   zip <- zip_dir(p)
 
   folder <- list(download = mockery::mock(zip))
@@ -65,9 +65,9 @@ test_that("metadata", {
 
 
 test_that("push", {
-  path <- orderly::orderly_example("minimal")
-  id <- orderly::orderly_run("example", root = path, echo = FALSE)
-  p <- orderly::orderly_commit(id, root = path)
+  path <- orderly1::orderly_example("minimal")
+  id <- orderly1::orderly_run("example", root = path, echo = FALSE)
+  p <- orderly1::orderly_commit(id, root = path)
 
   folder <- list(create = mockery::mock(), upload = mockery::mock())
 
